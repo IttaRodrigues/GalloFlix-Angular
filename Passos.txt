@@ -1,0 +1,21 @@
+git config --global user.name IttaRodrigues
+git config --global user.email itamararodriguesdeoliveira@gmail.com
+
+Criar o projeto:
+ng new galloflix
+
+Executar o projeto:
+cd galloflix
+
+ng serve -o
+
+criar novos componentes:
+ng g c pages/home
+
+ng g c pages/search
+
+ng g c pages/details
+
+Criar um serviço:
+ng g s services/movieApi
+
