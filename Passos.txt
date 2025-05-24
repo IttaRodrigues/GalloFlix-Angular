@@ -7,6 +7,8 @@ ng new galloflix
 Executar o projeto:
 cd galloflix
 
+npm i 
+
 ng serve -o
 
 criar novos componentes:
