@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieApiService {
-  
+
   constructor(private http: HttpClient) { }
 
   baseUrl = 'https://api.themoviedb.org/3';
@@ -15,12 +15,28 @@ export class MovieApiService {
   headers: {
     accept: 'application/json',
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjkyNTJjOWFmMDUxNjIyOWVmMDhjMDk4MzIyNTcwNSIsIm5iZiI6MTc0NjgzODkyNi4zNzY5OTk5LCJzdWIiOiI2ODFlYTU4ZTEwMjg1MjU2ODUyZDBlYjgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.cjxiArhjCZwl-M4U3ysjSNvJFGlrjH6Py5m_sUE4_cs'
+  
   }
 };
 
 // Banner de Midias da Semana
 bannerApiData(): Observable<any> {
   return this.http.get(`${this.baseUrl}/trending/all/week?language=pt-br`, this.options);
+}
+
+// Filmes em Destaque do Dia
+trendingMovieApiData(): Observable<any> {
+  return this.http.get(`${this.baseUrl}/trending/movie/day?language=pt-br`, this.options)
+}
+
+// Séries em Destaque do Dia
+trendingSerieApiData(): Observable<any> {
+  return this.http.get(`${this.baseUrl}/trending/tv/day?language=pt-br`, this.options)
+}
+
+// Filmes de Ação mais Populares
+popularActionMovieApiData(): Observable<any> {
+  return this.http.get(`${this.baseUrl}/discover/movie?language=pt-br&with_genres=28&sort_by=popularity.desc`, this.options)
 }
 
 }

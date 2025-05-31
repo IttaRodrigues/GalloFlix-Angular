@@ -21,3 +21,5 @@ ng g c pages/details
 Criar um serviço:
 ng g s services/movieApi
 
+ng g d auto-scroll
+
